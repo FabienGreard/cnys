@@ -3,4 +3,9 @@ node_modules
 
 # Package
 package-lock.json
+yarn.lock
 
+#test folder sync and script
+sync
+sync2
+testSh.sh
