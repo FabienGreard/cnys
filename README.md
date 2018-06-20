@@ -11,15 +11,28 @@ If something doesn’t work, please [file an issue](https://github.com/FabienGre
 
 ## Quick Start
 
-### Credentials
-
-Rename `config/.credentials.example.js` to `.credentials.js` and insert your own credentials
-
 ### Install
 
 ```sh
 npm install or yarn install
 ```
+
+### Commands
+
+To start watching launch `./index watch [folder=<folderPathString>] [remote=<remoteFolderPathString>]`
+
+| Options               | Description                         |
+| --------------------- | ----------------------------------- |
+| --help                | show all options and commands       |
+| --verbose<boolean>    | output logs                         |
+| --url<string>         | A string url for ssh                |
+| --ncUrl<string>       | A string url for ssh netcat         |
+| --username<string>    | An username for ssh                 |
+| --privateKey<boolean> | Will use a pka for ssh              |
+| --remove<boolean>     | Will delete remote or not           |
+| --glob<string>        | a pattern for watching file         |
+| --ignored<string>     | a pattern for ignored files         |
+| --retry<number>       | Number of retry when an error occur |
 
 ## Test
 
