@@ -1,0 +1,70 @@
+{
+  "name": "foldersync",
+  "version": "0.0.1",
+  "description": "Synchronization between remote server on change !",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FabienGreard/foldersync.git"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest",
+    "coverage": "jest --coverage --watchAll",
+    "format": "prettier --single-quote --write '**/*.{js,json,css,md}'",
+    "precommit": "lint-staged"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true,
+    "bail": true,
+    "testMatch": [
+      "**/test/**/*.test.js?(x)"
+    ],
+    "testPathIgnorePatterns": [
+      "node_modules/"
+    ],
+    "collectCoverageFrom": [
+      "lib/*.js",
+      "!lib/index.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,json,css,md}": [
+      "prettier --write --single-quote",
+      "git add"
+    ]
+  },
+  "author": "FabienGreard",
+  "license": "MIT",
+  "dependencies": {
+    "del": "^3.0.0",
+    "sane": "^2.5.2",
+    "ssh2": "^0.6.1",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "jest": "^23.1.0",
+    "lint-staged": "^7.2.0",
+    "nodemon": "^1.17.5",
+    "prettier": "1.13.5"
+  },
+  "keywords": [
+    "Synchronization",
+    "folder",
+    "remote",
+    "file",
+    "netcat",
+    "ssh"
+  ]
+}
