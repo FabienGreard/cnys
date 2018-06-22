@@ -9,4 +9,5 @@ yarn.lock
 coverage
 sync
 sync2
-testSh.sh
+testLocalServer.sh
+testRemoteServer.sh
