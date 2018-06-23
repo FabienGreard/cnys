@@ -4,6 +4,7 @@ const { launchServer, launchWatcher } = require('./lib'),
   config = require('./config');
 
 launchCommand(config, config => {
+  if (config.debug) console.log(config);
   const server = launchServer(config);
   launchWatcher(server, config);
 });

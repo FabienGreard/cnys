@@ -3,10 +3,12 @@ exports.desc = 'Start watching';
 exports.builder = yargs => {
   yargs
     .option('verbose', {
-      alias: 'v'
+      alias: 'v',
+      type: 'boolean'
     })
     .option('debug', {
-      alias: 'd'
+      alias: 'd',
+      type: 'boolean'
     })
     .option('url', {
       describe: 'A url for ssh',
