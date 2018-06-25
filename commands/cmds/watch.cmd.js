@@ -1,4 +1,4 @@
-exports.command = 'watch [folder] [remote]';
+exports.command = 'watch [source] [destination]';
 exports.desc = 'Start watching';
 exports.builder = yargs => {
   yargs
@@ -10,9 +10,14 @@ exports.builder = yargs => {
       alias: 'd',
       type: 'boolean'
     })
+    .option('copy', {
+      alias: 'c',
+      describe: 'Enable to copy source to remote at start.',
+      type: 'boolean'
+    })
     .option('remove', {
       alias: 'r',
-      describe: 'Enable delete file from remote.',
+      describe: 'Enable delete file from destination.',
       type: 'boolean'
     })
     .option('glob', {
@@ -27,15 +32,15 @@ exports.builder = yargs => {
     });
 };
 exports.handler = function(argv) {
-  if (!argv.folder && typeof argv.folder !== 'string') {
+  if (!argv.source && typeof argv.folder !== 'string') {
     throw new Error('folder argumment is missing or invalid');
   }
-  if (!argv.remote && typeof argv.remote !== 'string') {
+  if (!argv.destination && typeof argv.remote !== 'string') {
     throw new Error('remote argumment is missing or invalid');
   }
 
   if (argv.verbose)
-    console.log(`Start watching ${argv.folder} at ${argv.remote}`);
+    console.log(`Start watching ${argv.source} at ${argv.destination}`);
 
   return argv;
 };
