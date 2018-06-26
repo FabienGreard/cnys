@@ -1,4 +1,4 @@
-exports.command = 'watchurl [url] [folder] [remote]';
+exports.command = 'remoteWatch [url] [folder] [remote]';
 exports.desc = 'Start watching';
 exports.builder = yargs => {
   yargs

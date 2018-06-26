@@ -1,4 +1,4 @@
-exports.command = 'watch [source] [destination]';
+exports.command = 'localWatch [source] [destination]';
 exports.desc = 'Start watching';
 exports.builder = yargs => {
   yargs
@@ -12,7 +12,7 @@ exports.builder = yargs => {
     })
     .option('copy', {
       alias: 'c',
-      describe: 'Enable to copy source to remote at start.',
+      describe: 'Enable to copy source to destination at start.',
       type: 'boolean'
     })
     .option('remove', {

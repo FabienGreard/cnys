@@ -19,20 +19,18 @@ npm install or yarn install
 
 ### Commands
 
-To start watching launch `./index watch [folder=<folderPathString>] [remote=<remoteFolderPathString>]`
+Start folderSync on a local folder to a local destination :
 
-| Options               | Description                         |
-| --------------------- | ----------------------------------- |
-| --help                | show all options and commands       |
-| --verbose<boolean>    | output logs                         |
-| --url<string>         | A string url for ssh                |
-| --ncUrl<string>       | A string url for ssh netcat         |
-| --username<string>    | An username for ssh                 |
-| --privateKey<boolean> | Will use a pka for ssh              |
-| --remove<boolean>     | Will delete remote or not           |
-| --glob<string>        | a pattern for watching file         |
-| --ignored<string>     | a pattern for ignored files         |
-| --retry<number>       | Number of retry when an error occur |
+`./index localWatch [source=<sourcePath>][destination=<destinationpath=>]`
+
+| Options   | Description                                           | aliases | type        |
+| --------- | ----------------------------------------------------- | ------- | ----------- |
+| --verbose | Output action logs                                    | --v     | boolean     |
+| --debug   | Output debug logs                                     | --d     | boolean     |
+| --copy    | Enable to copy source to destination at start         | --c     | boolean     |
+| --remove  | Enable delete file from destination                   | --r     | boolean     |
+| --glob    | A single string glob pattern or an array of them      | --g     | filePattern |
+| --ignored | A glob, regex, function, or array of any combination. | --i     | filePattern |
 
 ## Test
 
