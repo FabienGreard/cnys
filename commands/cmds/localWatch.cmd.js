@@ -11,12 +11,12 @@ exports.builder = yargs => {
       type: 'boolean'
     })
     .option('copy', {
-      alias: 'c',
+      alias: 'cp',
       describe: 'Enable to copy source to destination at start.',
       type: 'boolean'
     })
     .option('remove', {
-      alias: 'r',
+      alias: 'rm',
       describe: 'Enable delete file from destination.',
       type: 'boolean'
     })
@@ -32,11 +32,11 @@ exports.builder = yargs => {
     });
 };
 exports.handler = function(argv) {
-  if (!argv.source && typeof argv.folder !== 'string') {
-    throw new Error('folder argumment is missing or invalid');
+  if (!argv.source && typeof argv.source !== 'string') {
+    throw new Error('source argumment is missing or invalid');
   }
-  if (!argv.destination && typeof argv.remote !== 'string') {
-    throw new Error('remote argumment is missing or invalid');
+  if (!argv.destination && typeof argv.destination !== 'string') {
+    throw new Error('destination argumment is missing or invalid');
   }
 
   if (argv.verbose)
