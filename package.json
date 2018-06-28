@@ -1,6 +1,6 @@
 {
   "name": "foldersync",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Synchronization between remote server on change !",
   "main": "index.js",
   "repository": {
