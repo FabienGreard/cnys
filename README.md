@@ -57,3 +57,8 @@ Use `npm test` to start testing your file. By default it read test file named `*
 You can easily add your own config by editing `package.json`
 
 It also has a built-in coverage with `npm run coverage`
+
+## Next Steps
+
+Replace sane with chokidar
+Use of fs-extra instead of ncp/del
