@@ -1,4 +1,4 @@
-exports.command = 'remoteWatch [url] [folder] [remote]';
+exports.command = 'remoteWatch [source] [url] [destination]';
 exports.desc = 'Start watching';
 exports.builder = yargs => {
   yargs
@@ -10,33 +10,34 @@ exports.builder = yargs => {
       alias: 'd',
       type: 'boolean'
     })
-    .option('url', {
-      describe: 'A url for ssh',
-      type: 'string'
-    })
     .option('username', {
       alias: 'u',
-      describe: 'A username to connect for ssh',
+      describe: 'A username to connect for ssh.',
+      type: 'string'
+    })
+    .option('password', {
+      alias: 'pwd',
+      describe: 'A password to connect for ssh.',
       type: 'string'
     })
     .option('privateKey', {
-      alias: 'pk',
-      describe: 'A path to your privateKey for ssh',
+      alias: 'ppk',
+      describe: 'Use your pka file under ~/.ssh.',
       type: 'boolean'
     })
     .option('ncUrl', {
       alias: 'nc',
-      describe: 'A netcat url for ssh',
+      describe: 'A netcat url for ssh.',
       type: 'string'
     })
-    .option('proxy', {
-      alias: 'p',
-      describe: 'Use a proxy setting',
-      type: 'string'
+    .option('copy', {
+      alias: 'cp',
+      describe: 'Enable to copy source to destination at start.',
+      type: 'boolean'
     })
     .option('remove', {
-      alias: 'r',
-      describe: 'Enable delete file from remote server.',
+      alias: 'rm',
+      describe: 'Enable delete file from destination server.',
       type: 'boolean'
     })
     .option('glob', {
@@ -50,21 +51,22 @@ exports.builder = yargs => {
       type: 'array'
     })
     .option('retry', {
-      describe: 'Number of retry when an error occur durring copy',
+      alias: 'r',
+      describe: 'Number of retry when an error occur durring copy.',
       type: 'number'
     });
 };
 exports.handler = function(argv) {
-  if (!argv.folder && typeof argv.folder !== 'string') {
-    throw new Error('folder argumment is missing or invalid');
+  if (!argv.source && typeof argv.source !== 'string') {
+    throw new Error('source argumment is missing or invalid');
   }
-  if (!argv.remote && typeof argv.remote !== 'string') {
-    throw new Error('remote argumment is missing or invalid');
+  if (!argv.destination && typeof argv.destination !== 'string') {
+    throw new Error('destination argumment is missing or invalid');
   }
 
   if (argv.verbose)
     console.log(
-      `Start watching ${argv.folder} on ${argv.url} at ${argv.remote}`
+      `Start watching ${argv.source} on ${argv.url} at ${argv.destination}`
     );
   return argv;
 };
