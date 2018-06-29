@@ -7,6 +7,7 @@ yarn.lock
 
 # Test && Coverage
 coverage
+testSync
 sync
 sync2
 testLocalServer.sh
