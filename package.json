@@ -1,11 +1,11 @@
 {
-  "name": "foldersync",
+  "name": "cnys",
   "version": "0.5.0",
   "description": "Synchronization between remote server on change !",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FabienGreard/foldersync.git"
+    "url": "https://github.com/FabienGreard/cnys.git"
   },
   "scripts": {
     "start": "node index.js",
@@ -61,11 +61,19 @@
     "prettier": "1.13.5"
   },
   "keywords": [
-    "Synchronization",
+    "synchronization",
     "folder",
+    "cnys",
+    "sync",
+    "cnys",
     "remote",
-    "file",
     "netcat",
-    "ssh"
+    "ssh",
+    "upload",
+    "fs",
+    "watch",
+    "watchFile",
+    "watcher",
+    "watching"
   ]
 }
