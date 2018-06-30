@@ -21,7 +21,7 @@ npm install or yarn install
 
 Start cnys on a local folder to a local destination :
 
-`./index localWatch [source=<sourcePath>] [destination=<destinationpath>]`
+`cyns local [source=<sourcePath>] [destination=<destinationpath>]`
 
 | Options   | Description                                           | aliases | type        |
 | --------- | ----------------------------------------------------- | ------- | ----------- |
@@ -32,7 +32,7 @@ Start cnys on a local folder to a local destination :
 | --glob    | A single string glob pattern or an array of them      | --g     | filePattern |
 | --ignored | A glob, regex, function, or array of any combination. | --i     | filePattern |
 
-`./index localWatch [source=<sourcePath>] [url=<urlString>] [destination=<destinationpath>]`
+`cyns remote [source=<sourcePath>] [url=<urlString>] [destination=<destinationpath>]`
 
 | Options      | Description                                           | aliases | type        |
 | ------------ | ----------------------------------------------------- | ------- | ----------- |

@@ -1,4 +1,4 @@
-exports.command = 'localWatch [source] [destination]';
+exports.command = 'remote [source] [url] [destination]';
 exports.desc = 'Start watching';
 exports.builder = yargs => {
   yargs
@@ -10,6 +10,26 @@ exports.builder = yargs => {
       alias: 'd',
       type: 'boolean'
     })
+    .option('username', {
+      alias: 'u',
+      describe: 'A username to connect for ssh.',
+      type: 'string'
+    })
+    .option('password', {
+      alias: 'pwd',
+      describe: 'A password to connect for ssh.',
+      type: 'string'
+    })
+    .option('privateKey', {
+      alias: 'ppk',
+      describe: 'Use your pka file under ~/.ssh.',
+      type: 'boolean'
+    })
+    .option('ncUrl', {
+      alias: 'nc',
+      describe: 'A netcat url for ssh.',
+      type: 'string'
+    })
     .option('copy', {
       alias: 'cp',
       describe: 'Enable to copy source to destination at start.',
@@ -17,7 +37,7 @@ exports.builder = yargs => {
     })
     .option('remove', {
       alias: 'rm',
-      describe: 'Enable delete file from destination.',
+      describe: 'Enable delete file from destination server.',
       type: 'boolean'
     })
     .option('glob', {
@@ -29,6 +49,11 @@ exports.builder = yargs => {
       alias: 'i',
       describe: 'A glob, regex, function, or array of any combination.',
       type: 'array'
+    })
+    .option('retry', {
+      alias: 'r',
+      describe: 'Number of retry when an error occur durring copy.',
+      type: 'number'
     });
 };
 exports.handler = function(argv) {
@@ -40,7 +65,8 @@ exports.handler = function(argv) {
   }
 
   if (argv.verbose)
-    console.log(`Start watching ${argv.source} at ${argv.destination}`);
-
+    console.log(
+      `Start watching ${argv.source} on ${argv.url} at ${argv.destination}`
+    );
   return argv;
 };

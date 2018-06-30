@@ -11,6 +11,6 @@ module.exports = {
   glob: null,
   ignored: null,
   retry: 5,
-  verbose: false,
+  verbose: true,
   debug: false
 };
