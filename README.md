@@ -23,30 +23,30 @@ Start cnys on a local folder to a local destination :
 
 `cyns local [source=<sourcePath>] [destination=<destinationpath>]`
 
-| Options   | Description                                           | aliases | type        |
-| --------- | ----------------------------------------------------- | ------- | ----------- |
-| --verbose | Output action logs                                    | --v     | boolean     |
-| --debug   | Output debug logs                                     | --d     | boolean     |
-| --copy    | Enable to copy source to destination at start         | --cp    | boolean     |
-| --remove  | Enable delete file from destination                   | --rm    | boolean     |
-| --glob    | A single string glob pattern or an array of them      | --g     | filePattern |
-| --ignored | A glob, regex, function, or array of any combination. | --i     | filePattern |
+| Options   | Description                                           | aliases | type        | default |
+| --------- | ----------------------------------------------------- | ------- | ----------- | ------- |
+| --verbose | Output action logs                                    | --v     | boolean     | true    |
+| --debug   | Output debug logs                                     | --d     | boolean     | false   |
+| --copy    | Enable to copy source to destination at start         | --cp    | boolean     | true    |
+| --remove  | Enable delete file from destination                   | --rm    | boolean     | true    |
+| --glob    | A single string glob pattern or an array of them      | --g     | filePattern | null    |
+| --ignored | A glob, regex, function, or array of any combination. | --i     | filePattern | null    |
 
 `cyns remote [source=<sourcePath>] [url=<urlString>] [destination=<destinationpath>]`
 
-| Options      | Description                                           | aliases | type        |
-| ------------ | ----------------------------------------------------- | ------- | ----------- |
-| --verbose    | Output action logs                                    | --v     | boolean     |
-| --debug      | Output debug logs                                     | --d     | boolean     |
-| --copy       | Enable to copy source to destination at start         | --cp    | boolean     |
-| --remove     | Enable delete file from destination                   | --rm    | boolean     |
-| --glob       | A single string glob pattern or an array of them      | --g     | filePattern |
-| --ignored    | A glob, regex, function, or array of any combination. | --i     | filePattern |
-| --ncUrl      | A netcat url for ssh.                                 | --nc    | string      |
-| --retry      | Number of retry when an error occur durring copy.     | --r     | number      |
-| --username   | A username to connect for ssh.                        | --u     | string      |
-| --password   | A password to connect for ssh.                        | --pwd   | string      |
-| --privateKey | Will look for your pka file under ~/.ssh.             | --ppk   | boolean     |
+| Options      | Description                                           | aliases | type        | default |
+| ------------ | ----------------------------------------------------- | ------- | ----------- | ------- |
+| --verbose    | Output action logs                                    | --v     | boolean     | false   |
+| --debug      | Output debug logs                                     | --d     | boolean     | true    |
+| --copy       | Enable to copy source to destination at start         | --cp    | boolean     | true    |
+| --remove     | Enable delete file from destination                   | --rm    | boolean     | null    |
+| --glob       | A single string glob pattern or an array of them      | --g     | filePattern | null    |
+| --ignored    | A glob, regex, function, or array of any combination. | --i     | filePattern | null    |
+| --ncUrl      | A netcat url for ssh.                                 | --nc    | string      | 5       |
+| --retry      | Number of retry when an error occur durring copy.     | --r     | number      | null    |
+| --username   | A username to connect for ssh.                        | --u     | string      | null    |
+| --password   | A password to connect for ssh.                        | --pwd   | string      | null    |
+| --privateKey | Will look for your pka file under ~/.ssh.             | --ppk   | boolean     | false   |
 
 ## Test
 
