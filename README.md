@@ -14,14 +14,16 @@ If something doesn’t work, please [file an issue](https://github.com/FabienGre
 ### Install
 
 ```sh
-npm install or yarn install
+$ npm install or yarn install
 ```
 
 ### Commands
 
 Start cnys on a local folder to a local destination :
 
-`cyns local [source=<sourcePath>] [destination=<destinationpath>]`
+```sh
+$ cyns local [source=<sourcePath>] [destination=<destinationpath>]
+```
 
 | Options   | Description                                           | aliases | type        | default |
 | --------- | ----------------------------------------------------- | ------- | ----------- | ------- |
@@ -32,7 +34,9 @@ Start cnys on a local folder to a local destination :
 | --glob    | A single string glob pattern or an array of them      | --g     | filePattern | null    |
 | --ignored | A glob, regex, function, or array of any combination. | --i     | filePattern | null    |
 
-`cyns remote [source=<sourcePath>] [url=<urlString>] [destination=<destinationpath>]`
+```sh
+$ cyns remote [source=<sourcePath>] [url=<urlString>] [destination=<destinationpath>]
+```
 
 | Options      | Description                                           | aliases | type        | default |
 | ------------ | ----------------------------------------------------- | ------- | ----------- | ------- |

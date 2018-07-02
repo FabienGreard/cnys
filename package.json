@@ -1,6 +1,6 @@
 {
   "name": "cnys",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Synchronization between remote server on change !",
   "main": "index.js",
   "repository": {
@@ -69,7 +69,7 @@
     "folder",
     "cnys",
     "sync",
-    "cnys",
+    "cyns",
     "remote",
     "netcat",
     "ssh",
@@ -78,6 +78,8 @@
     "watch",
     "watchFile",
     "watcher",
-    "watching"
+    "watching",
+    "file",
+    "fsevent"
   ]
 }
