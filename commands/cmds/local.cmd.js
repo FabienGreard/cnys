@@ -10,20 +10,10 @@ exports.builder = yargs => {
       alias: 'd',
       type: 'boolean'
     })
-    .option('copy', {
-      alias: 'cp',
-      describe: 'Enable to copy source to destination at start.',
-      type: 'boolean'
-    })
     .option('remove', {
       alias: 'rm',
       describe: 'Enable delete file from destination.',
       type: 'boolean'
-    })
-    .option('glob', {
-      alias: 'g',
-      describe: 'A single string glob pattern or an array of them.',
-      type: 'array'
     })
     .option('ignored', {
       alias: 'i',
