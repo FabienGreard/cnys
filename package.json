@@ -7,6 +7,7 @@
     "type": "git",
     "url": "https://github.com/FabienGreard/cnys.git"
   },
+  "homepage": "https://github.com/FabienGreard/cnys",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
