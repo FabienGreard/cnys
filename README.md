@@ -1,8 +1,12 @@
 # cnys [![Build Status](https://travis-ci.org/FabienGreard/cnys.svg?branch=master)](https://travis-ci.org/FabienGreard/cnys)[![dependencies Status](https://david-dm.org/FabienGreard/cnys/status.svg)](https://david-dm.org/FabienGreard/cnys)[![devDependencies Status](https://david-dm.org/FabienGreard/cnys/dev-status.svg)](https://david-dm.org/FabienGreard/cnys?type=dev)
 
+<aside class="warning">
+  The remote feature is still under huge development !
+</aside>
+
 cnys main feature allow developers to synchronize files between remote server on change !, **what it does**:
 
-- ssh ! :globe_with_meridians:
+- sftp ! :globe_with_meridians:
 - Server hoping (netcat) :lock:
 - Copy/delete file/folder ! :eyeglasses:
 - Ready to use :fire:
@@ -25,14 +29,12 @@ Start cnys on a local folder to a local destination :
 $ cyns local [source=<sourcePath>] [destination=<destinationpath>]
 ```
 
-| Options   | Description                                           | aliases | type        | default |
-| --------- | ----------------------------------------------------- | ------- | ----------- | ------- |
-| --verbose | Output action logs                                    | --v     | boolean     | true    |
-| --debug   | Output debug logs                                     | --d     | boolean     | false   |
-| --copy    | Enable to copy source to destination at start         | --cp    | boolean     | true    |
-| --remove  | Enable delete file from destination                   | --rm    | boolean     | true    |
-| --glob    | A single string glob pattern or an array of them      | --g     | filePattern | null    |
-| --ignored | A glob, regex, function, or array of any combination. | --i     | filePattern | null    |
+| Options   | Description                                           | aliases | type                                                  | default |
+| --------- | ----------------------------------------------------- | ------- | ----------------------------------------------------- | ------- |
+| --verbose | Output action logs                                    | --v     | boolean                                               | true    |
+| --debug   | Output debug logs                                     | --d     | boolean                                               | false   |
+| --remove  | Enable delete file from destination                   | --rm    | boolean                                               | true    |
+| --ignored | A glob, regex, function, or array of any combination. | --i     | [filePattern](https://github.com/micromatch/anymatch) | null    |
 
 ```sh
 $ cyns remote [source=<sourcePath>] [url=<urlString>] [destination=<destinationpath>]
@@ -52,9 +54,21 @@ $ cyns remote [source=<sourcePath>] [url=<urlString>] [destination=<destinationp
 | --password   | A password to connect for ssh.                        | --pwd   | string      | null    |
 | --privateKey | Will look for your pka file under ~/.ssh.             | --ppk   | boolean     | false   |
 
-## Test
+## Example of use :
 
-cnys use [Jest](https://facebook.github.io/jest/) as a testing framework
+```sh
+$ cnys local 'sync' 'sync2' --v true --ignored '.*' '*.yml'
+```
+
+The example above will start watching file on a folder name sync and copying file into folder sync2
+
+```sh
+$ cnys remote 'sync' '192.168.30.2' '/home/user/test'  --ncUrl '192.168.30.3' --username 'fgreard' --privateKey true --retry 100
+```
+
+The example above will start watching file on a folder name sync and copying file to '192.168.30.2' at '/home/user/test'
+
+## Test
 
 Use `npm test` to start testing your file. By default it read test file named `*.test.js` under `/test`.
 
@@ -62,7 +76,7 @@ You can easily add your own config by editing `package.json`
 
 It also has a built-in coverage with `npm run coverage`
 
-## Next Steps
+## Credits
 
-Replace sane with chokidar
-Use of fs-extra instead of ncp/del
+[chokidar](https://github.com/paulmillr/chokidar), a powerfull watcher
+[Jest](https://facebook.github.io/jest/), a testing framework
