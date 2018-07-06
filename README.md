@@ -1,9 +1,5 @@
 # cnys [![Build Status](https://travis-ci.org/FabienGreard/cnys.svg?branch=master)](https://travis-ci.org/FabienGreard/cnys)[![dependencies Status](https://david-dm.org/FabienGreard/cnys/status.svg)](https://david-dm.org/FabienGreard/cnys)[![devDependencies Status](https://david-dm.org/FabienGreard/cnys/dev-status.svg)](https://david-dm.org/FabienGreard/cnys?type=dev)
 
-<aside class="warning">
-  The remote feature is still under huge development !
-</aside>
-
 cnys main feature allow developers to synchronize files between remote server on change !, **what it does**:
 
 - sftp ! :globe_with_meridians:
@@ -35,6 +31,8 @@ $ cyns local [source=<sourcePath>] [destination=<destinationpath>]
 | --debug   | Output debug logs                                     | --d     | boolean                                               | false   |
 | --remove  | Enable delete file from destination                   | --rm    | boolean                                               | true    |
 | --ignored | A glob, regex, function, or array of any combination. | --i     | [filePattern](https://github.com/micromatch/anymatch) | null    |
+
+:warning: **The remote feature is still under huge development !**
 
 ```sh
 $ cyns remote [source=<sourcePath>] [url=<urlString>] [destination=<destinationpath>]
