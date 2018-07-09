@@ -30,20 +30,10 @@ exports.builder = yargs => {
       describe: 'A netcat url for ssh.',
       type: 'string'
     })
-    .option('copy', {
-      alias: 'cp',
-      describe: 'Enable to copy source to destination at start.',
-      type: 'boolean'
-    })
     .option('remove', {
       alias: 'rm',
       describe: 'Enable delete file from destination server.',
       type: 'boolean'
-    })
-    .option('glob', {
-      alias: 'g',
-      describe: 'A single string glob pattern or an array of them.',
-      type: 'array'
     })
     .option('ignored', {
       alias: 'i',
