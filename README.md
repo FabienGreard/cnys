@@ -38,19 +38,17 @@ $ cyns local [source=<sourcePath>] [destination=<destinationpath>]
 $ cyns remote [source=<sourcePath>] [url=<urlString>] [destination=<destinationpath>]
 ```
 
-| Options      | Description                                           | aliases | type        | default |
-| ------------ | ----------------------------------------------------- | ------- | ----------- | ------- |
-| --verbose    | Output action logs                                    | --v     | boolean     | false   |
-| --debug      | Output debug logs                                     | --d     | boolean     | true    |
-| --copy       | Enable to copy source to destination at start         | --cp    | boolean     | true    |
-| --remove     | Enable delete file from destination                   | --rm    | boolean     | null    |
-| --glob       | A single string glob pattern or an array of them      | --g     | filePattern | null    |
-| --ignored    | A glob, regex, function, or array of any combination. | --i     | filePattern | null    |
-| --ncUrl      | A netcat url for ssh.                                 | --nc    | string      | 5       |
-| --retry      | Number of retry when an error occur durring copy.     | --r     | number      | null    |
-| --username   | A username to connect for ssh.                        | --u     | string      | null    |
-| --password   | A password to connect for ssh.                        | --pwd   | string      | null    |
-| --privateKey | Will look for your pka file under ~/.ssh.             | --ppk   | boolean     | false   |
+| Options      | Description                                           | aliases | type                                                  | default |
+| ------------ | ----------------------------------------------------- | ------- | ----------------------------------------------------- | ------- |
+| --verbose    | Output action logs                                    | --v     | boolean                                               | false   |
+| --debug      | Output debug logs                                     | --d     | boolean                                               | true    |
+| --remove     | Enable delete file from destination                   | --rm    | boolean                                               | null    |
+| --ignored    | A glob, regex, function, or array of any combination. | --i     | [filePattern](https://github.com/micromatch/anymatch) | null    |
+| --ncUrl      | A netcat url for ssh.                                 | --nc    | string                                                | 5       |
+| --retry      | Number of retry when an error occur durring copy.     | --r     | number                                                | null    |
+| --username   | A username to connect for ssh.                        | --u     | string                                                | null    |
+| --password   | A password to connect for ssh.                        | --pwd   | string                                                | null    |
+| --privateKey | Will look for your pka file under ~/.ssh.             | --ppk   | boolean                                               | false   |
 
 ## Example of use :
 
