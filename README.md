@@ -76,3 +76,5 @@ It also has a built-in coverage with `npm run coverage`
 
 [chokidar](https://github.com/paulmillr/chokidar), a powerfull watcher
 [Jest](https://facebook.github.io/jest/), a testing framework
+
+Thanks to Alexandre for the idea.
