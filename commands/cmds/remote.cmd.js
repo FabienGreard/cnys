@@ -39,11 +39,6 @@ exports.builder = yargs => {
       alias: 'i',
       describe: 'A glob, regex, function, or array of any combination.',
       type: 'array'
-    })
-    .option('retry', {
-      alias: 'r',
-      describe: 'Number of retry when an error occur durring copy.',
-      type: 'number'
     });
 };
 exports.handler = function(argv) {

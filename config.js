@@ -8,7 +8,6 @@ module.exports = {
   destination: null,
   remove: true,
   ignored: null,
-  retry: 5,
   verbose: true,
   debug: false
 };
