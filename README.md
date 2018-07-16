@@ -61,7 +61,7 @@ The example above will start watching file on a folder name sync and copying fil
 $ cnys remote 'sync' '192.168.30.2' '/home/user/test'  --ncUrl '192.168.30.3' --username 'fgreard' --privateKey true
 ```
 
-The example above will start watching file on a folder name sync and copying file to '192.168.30.2' at '/home/user/test'
+The example above will start watching file on a folder name sync and copying file to '192.168.30.3' at '/home/user/test'
 
 ## Test
 
