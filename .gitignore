@@ -4,6 +4,7 @@ node_modules
 # Package
 package-lock.json
 yarn.lock
+yarn-error.log
 
 # Test && Coverage
 coverage

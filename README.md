@@ -2,7 +2,7 @@
 
 cnys main feature allow developers to synchronize files between remote server on change !, **what it does**:
 
-- sftp ! :globe_with_meridians:
+- ssh/sftp ! :globe_with_meridians:
 - Server hoping (netcat) :lock:
 - Copy/delete file/folder ! :eyeglasses:
 - Ready to use :fire:
@@ -52,13 +52,13 @@ $ cyns remote [source=<sourcePath>] [url=<urlString>] [destination=<destinationp
 ## Example of use :
 
 ```sh
-$ cnys local 'sync' 'sync2' --v true --ignored '.*' '*.yml'
+$ cnys local 'sync' 'sync2' --v true --ignored '.git*' '*.yml'
 ```
 
 The example above will start watching file on a folder name sync and copying file into folder sync2
 
 ```sh
-$ cnys remote 'sync' '192.168.30.2' '/home/user/test'  --ncUrl '192.168.30.3' --username 'fgreard' --privateKey true
+$ cnys remote 'sync' '192.168.30.2' '/home/user/sync'  --ncUrl '192.168.30.3' --username 'fgreard' --privateKey true
 ```
 
 The example above will start watching file on a folder name sync and copying file to '192.168.30.2' at '/home/user/test'
