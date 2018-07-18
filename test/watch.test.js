@@ -14,7 +14,7 @@ describe('watch', () => {
   });
 
   test('Should create a watcher with options', () => {
-    watcher = watch.createWatcher({ ignored: ['*.md'] });
+    watcher = watch.createWatcher({ ignored: ['*.md'], url: 'test' });
 
     expect(watcher).toHaveProperty('_events');
   });
