@@ -7,6 +7,7 @@ module.exports = {
   privateKey: false,
   destination: null,
   remove: true,
+  force: false,
   ignored: null,
   verbose: true,
   debug: false
