@@ -70,10 +70,6 @@ $ cnys remote 'sync' '192.168.30.2' '/home/user/sync'  --ncUrl '192.168.30.3' --
 
 The example above will start watching file on a folder name sync and copying file to '192.168.30.3' at '/home/user/test'
 
-### events
-
-You may want to look at [chokidar](https://github.com/paulmillr/chokidar), to see what kind of events you could start watching, by default cnys use all events.
-
 ## Test
 
 Use `npm test` to start testing your file. By default it read test file named `*.test.js` under `/test`.
