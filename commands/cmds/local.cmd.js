@@ -10,6 +10,11 @@ exports.builder = yargs => {
       alias: 'd',
       type: 'boolean'
     })
+    .option('events', {
+      alias: 'e',
+      describe: 'An array of event used as liteners.',
+      type: 'array'
+    })
     .option('remove', {
       alias: 'rm',
       describe: 'Enable delete file from destination.',

@@ -25,12 +25,13 @@ Start cnys on a local folder to a local destination :
 $ cyns local [source=<sourcePath>] [destination=<destinationpath>]
 ```
 
-| Options | Description                                           | aliases | type                                                  | default |
-| ------- | ----------------------------------------------------- | ------- | ----------------------------------------------------- | ------- |
-| verbose | Output action logs.                                   | --v     | boolean                                               | true    |
-| debug   | Output debug logs.                                    | --d     | boolean                                               | false   |
-| remove  | Enable delete file from destination.                  | --rm    | boolean                                               | true    |
-| ignored | A glob, regex, function, or array of any combination. | --i     | [filePattern](https://github.com/micromatch/anymatch) | null    |
+| Options | Description                                           | aliases | type                                                  | default                   |
+| ------- | ----------------------------------------------------- | ------- | ----------------------------------------------------- | ------------------------- |
+| verbose | Output action logs.                                   | --v     | boolean                                               | true                      |
+| debug   | Output debug logs.                                    | --d     | boolean                                               | false                     |
+| remove  | Enable delete file from destination.                  | --rm    | boolean                                               | true                      |
+| ignored | A glob, regex, function, or array of any combination. | --i     | [filePattern](https://github.com/micromatch/anymatch) | null                      |
+| events  | An array of event used as liteners.                   | --e     | array                                                 | [listeners](###listeners) |
 
 :warning: **The remote feature is still under active development !**
 
@@ -38,17 +39,18 @@ $ cyns local [source=<sourcePath>] [destination=<destinationpath>]
 $ cyns remote [source=<sourcePath>] [url=<urlString>] [destination=<destinationpath>]
 ```
 
-| Options    | Description                                           | aliases | type                                                  | default |
-| ---------- | ----------------------------------------------------- | ------- | ----------------------------------------------------- | ------- |
-| verbose    | Output action logs.                                   | --v     | boolean                                               | true    |
-| debug      | Output debug logs.                                    | --d     | boolean                                               | false   |
-| force      | Force initial scan in case of large folder.           | --f     | boolean                                               | false   |
-| remove     | Enable delete file from destination.                  | --rm    | boolean                                               | true    |
-| ignored    | A glob, regex, function, or array of any combination. | --i     | [filePattern](https://github.com/micromatch/anymatch) | null    |
-| ncUrl      | A netcat url for ssh. (this is your destination).     | --nc    | string                                                | 5       |
-| username   | A username to connect for ssh.                        | --u     | string                                                | null    |
-| password   | A password to connect for ssh.                        | --pwd   | string                                                | null    |
-| privateKey | Will look for your pka file under ~/.ssh.             | --ppk   | boolean                                               | false   |
+| Options    | Description                                           | aliases | type                                                  | default                   |
+| ---------- | ----------------------------------------------------- | ------- | ----------------------------------------------------- | ------------------------- |
+| verbose    | Output action logs.                                   | --v     | boolean                                               | true                      |
+| debug      | Output debug logs.                                    | --d     | boolean                                               | false                     |
+| force      | Force initial scan in case of large folder.           | --f     | boolean                                               | false                     |
+| remove     | Enable delete file from destination.                  | --rm    | boolean                                               | true                      |
+| ignored    | A glob, regex, function, or array of any combination. | --i     | [filePattern](https://github.com/micromatch/anymatch) | null                      |
+| ncUrl      | A netcat url for ssh. (this is your destination).     | --nc    | string                                                | 5                         |
+| username   | A username to connect for ssh.                        | --u     | string                                                | null                      |
+| password   | A password to connect for ssh.                        | --pwd   | string                                                | null                      |
+| privateKey | Will look for your pka file under ~/.ssh.             | --ppk   | boolean                                               | false                     |
+| events     | An array of event used as liteners.                   | --e     | array                                                 | [listeners](###listeners) |
 
 ## Example of use :
 
@@ -71,6 +73,10 @@ Use `npm test` to start testing your file. By default it read test file named `*
 You can easily add your own config by editing `package.json`
 
 It also has a built-in coverage with `npm run coverage`
+
+### listeners
+
+You may want to look at [chokidar](https://github.com/paulmillr/chokidar), to see what kind of events you could start watching, by default cnys use all events.
 
 ## Credits
 

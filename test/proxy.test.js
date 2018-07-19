@@ -1,5 +1,4 @@
-const createProxy = require('../lib/proxy'),
-  handler = require('../lib/actionsHandler');
+const createProxy = require('../lib/proxy');
 
 describe('proxy', () => {
   const server = { ready: (...args) => {} };
@@ -10,7 +9,7 @@ describe('proxy', () => {
   });
 
   test('Attach an handler', () => {
-    const proxy = createProxy(server, handler);
+    const proxy = createProxy(server, { set: (...args) => {} });
 
     try {
       proxy.notify('ready', ['', '']);

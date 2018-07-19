@@ -10,6 +10,11 @@ exports.builder = yargs => {
       alias: 'd',
       type: 'boolean'
     })
+    .option('events', {
+      alias: 'e',
+      describe: 'An array of event used as liteners.',
+      type: 'array'
+    })
     .option('username', {
       alias: 'u',
       describe: 'A username to connect for ssh.',
