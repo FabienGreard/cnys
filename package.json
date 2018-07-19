@@ -1,6 +1,6 @@
 {
   "name": "cnys",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "Synchronization between remote server on change !",
   "main": "index.js",
   "repository": {
