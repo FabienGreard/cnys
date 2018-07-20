@@ -7,7 +7,6 @@ module.exports = {
   privateKey: false,
   destination: null,
   remove: true,
-  force: false,
   concurrency: 5,
   events: ['ready', 'change', 'add', 'addDir', 'unlink', 'unlinkDir'],
   ignored: null,

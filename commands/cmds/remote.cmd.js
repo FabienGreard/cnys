@@ -45,11 +45,6 @@ exports.builder = yargs => {
       describe: 'Enable delete file from destination server.',
       type: 'boolean'
     })
-    .option('force', {
-      alias: 'f',
-      describe: 'Force initial scan in case of large folder.',
-      type: 'boolean'
-    })
     .option('ignored', {
       alias: 'i',
       describe: 'A glob, regex, function, or array of any combination.',
