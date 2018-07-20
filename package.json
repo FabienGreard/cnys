@@ -1,6 +1,6 @@
 {
   "name": "cnys",
-  "version": "0.7.6",
+  "version": "8.0.0",
   "description": "Synchronization between remote server on change !",
   "main": "index.js",
   "repository": {
@@ -63,7 +63,7 @@
     "jest": "^23.1.0",
     "lint-staged": "^7.2.0",
     "nodemon": "^1.17.5",
-    "prettier": "1.13.5"
+    "prettier": "^1.13.7"
   },
   "keywords": [
     "synchronization",

@@ -15,6 +15,11 @@ exports.builder = yargs => {
       describe: 'An array of event used as liteners.',
       type: 'array'
     })
+    .option('concurrency', {
+      alias: 'c',
+      describe: 'Number of task that can be done in parallel.',
+      type: 'number'
+    })
     .option('username', {
       alias: 'u',
       describe: 'A username to connect for ssh.',
