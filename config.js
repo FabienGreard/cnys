@@ -10,6 +10,6 @@ module.exports = {
   concurrency: 5,
   events: ['ready', 'change', 'add', 'addDir', 'unlink', 'unlinkDir'],
   ignored: null,
-  verbose: true,
+  verbose: false,
   debug: false
 };
