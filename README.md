@@ -28,7 +28,7 @@ $ cyns local [source=<sourcePath>] [destination=<destinationpath>]
 
 | Options | Description                                           | aliases | type                                                  | default           |
 | ------- | ----------------------------------------------------- | ------- | ----------------------------------------------------- | ----------------- |
-| verbose | Output action logs.                                   | --v     | boolean                                               | true              |
+| verbose | Output action logs.                                   | --v     | boolean                                               | false             |
 | debug   | Output debug logs.                                    | --d     | boolean                                               | false             |
 | remove  | Enable delete file from destination.                  | --rm    | boolean                                               | true              |
 | ignored | A glob, regex, function, or array of any combination. | --i     | [filePattern](https://github.com/micromatch/anymatch) | null              |
