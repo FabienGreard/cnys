@@ -1,50 +1,106 @@
 const fs = require('../lib/fs');
 
 describe('fs', () => {
-  test('tar', done => {
-    fs.untar('./helpers', false).then(done);
-  });
+  describe('tar', () => {
+    test(`Should tar without error`, async () => {
+      await expect(fs.tar('./commands')).resolves.toEqual(['cmds', 'index.js']);
+    });
 
-  test('untar', done => {
-    fs.untar('./helpers', false).then(async () => {
-      await fs.deleteFile('./helpers/init.cnys.tar', false);
-      done();
+    test(`Should tar with error`, async () => {
+      await expect(fs.tar('./not-match', true)).resolves.toThrow();
     });
   });
 
-  test('createReadStream', () => {
-    const stream = fs.createReadStream('./helpers/delay.js');
-    expect(stream).toHaveProperty('_readableState');
+  describe('untar', () => {
+    test('Should untar without error', async () => {
+      await expect(fs.untar('./commands')).resolves.toEqual([
+        'cmds',
+        'index.js',
+        'init.cnys.tar'
+      ]);
+      await fs.deleteFile('./commands/init.cnys.tar');
+    });
+
+    test(`Should untar with error`, async () => {
+      await expect(fs.untar('./not-match', true)).resolves.toThrow();
+    });
   });
 
-  test('Should write a file', async () => {
-    const data = await fs.readFile(`${process.cwd()}/config.js`, false);
-    const file = fs.writeFile(`${process.cwd()}/config0.js`, data, false);
-    await expect(file).resolves.toEqual(`${process.cwd()}/config0.js`);
+  describe('createReadStream', () => {
+    test('Should create a read stream', () => {
+      const stream = fs.createReadStream(`./lib/index.js`);
+      expect(stream).toHaveProperty('bytesRead');
+    });
   });
 
-  test('Should read a file', async () => {
-    const data = fs.readFile(`${process.cwd()}/config.js`, false);
-    await expect(data).resolves.toBeInstanceOf(Buffer);
+  describe('writeFile', () => {
+    test('Should write a file without error', async () => {
+      const data = await fs.readFile('./config.js');
+      const file = fs.writeFile('./config0.js', data);
+      await expect(file).resolves.toEqual('./config0.js');
+    });
+
+    test('Should write a file with error', async () => {
+      const data = await fs.readFile('./config.js');
+      const file = fs.writeFile('./not-match/not-match.js', data, true);
+      await expect(file).resolves.toThrow();
+    });
   });
 
-  test('Should read a file (sync)', () => {
-    const data = fs.readFileSync(`${process.cwd()}/config.js`, false);
-    expect(data).toBeInstanceOf(Buffer);
+  describe('readFile', () => {
+    test('Should read a file without error', async () => {
+      const data = fs.readFile('./config.js');
+      await expect(data).resolves.toBeInstanceOf(Buffer);
+    });
+
+    test('Should read a file with error', async () => {
+      const data = fs.readFile('./not-match/not-match.js', true);
+      await expect(data).resolves.toThrow();
+    });
   });
 
-  test('Should delete a file', async () => {
-    const file = fs.deleteFile(`${process.cwd()}/config0.js`, false);
-    await expect(file).resolves.toEqual(`${process.cwd()}/config0.js`);
+  describe('readFileSync', () => {
+    test('Should read a file (sync) without error', () => {
+      const data = fs.readFileSync('./config.js');
+      expect(data).toBeInstanceOf(Buffer);
+    });
+
+    test('Should read a file (sync) with error', () => {
+      const data = fs.readFileSync('./not-match/not-match.js', true);
+      expect(data.message).toBe(
+        "ENOENT: no such file or directory, open './not-match/not-match.js'"
+      );
+    });
   });
 
-  test('Should write a dir', async () => {
-    const dir = fs.writeDir(`${process.cwd()}/fs-test`, false);
-    await expect(dir).resolves.toEqual(`${process.cwd()}/fs-test`);
+  describe('deleteFile', () => {
+    test('Should delete a file without error', async () => {
+      const file = fs.deleteFile('./config0.js');
+      await expect(file).resolves.toEqual('./config0.js');
+    });
+
+    test('Should delete a file with error', async () => {
+      const file = fs.deleteFile('./not-match/not-match.js', true);
+      await expect(file).resolves.toThrow();
+    });
   });
 
-  test('Should delete a dir', async () => {
-    const dir = fs.deleteDir(`${process.cwd()}/fs-test`, false);
-    await expect(dir).resolves.toEqual(`${process.cwd()}/fs-test`);
+  describe('writeDir', () => {
+    test('Should delete a dir without error', async () => {
+      const dir = fs.writeDir('./fs-test');
+      await expect(dir).resolves.toEqual('./fs-test');
+    });
+
+    test('Should delete a dir with error', async () => {
+      const dir = fs.writeDir('./not-match/not-match', true);
+      await expect(dir).resolves.toThrow();
+    });
+  });
+
+  describe('deleteDir', () => {
+    test('Should delete a dir without error', async () => {
+      const dir = fs.deleteDir('./fs-test');
+      await expect(dir).resolves.toEqual('./fs-test');
+    });
   });
 });

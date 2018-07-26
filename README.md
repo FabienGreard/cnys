@@ -38,18 +38,18 @@ $ cyns local [source=<sourcePath>] [destination=<destinationpath>]
 $ cyns remote [source=<sourcePath>] [url=<urlString>] [destination=<destinationpath>]
 ```
 
-| Options     | Description                                            | aliases | type                                                  | default           |
-| ----------- | ------------------------------------------------------ | ------- | ----------------------------------------------------- | ----------------- |
-| verbose     | Output action logs. (will desactivate the loading bar) | --v     | boolean                                               | false             |
-| debug       | Output debug logs.                                     | --d     | boolean                                               | false             |
-| concurrency | Number of task that can be done in parallel.           | --c     | number                                                | 5                 |
-| remove      | Enable delete file from destination.                   | --rm    | boolean                                               | true              |
-| ignored     | A glob, regex, function, or array of any combination.  | --i     | [filePattern](https://github.com/micromatch/anymatch) | null              |
-| ncUrl       | A netcat url for ssh. (this is your destination).      | --nc    | string                                                | null              |
-| username    | A username to connect for ssh.                         | --u     | string                                                | null              |
-| password    | A password to connect for ssh.                         | --pwd   | string                                                | null              |
-| privateKey  | Will look for your pka file under ~/.ssh.              | --ppk   | boolean                                               | false             |
-| events      | An array of event used as liteners.                    | --e     | array                                                 | [Events](#events) |
+| Options     | Description                                           | aliases | type                                                  | default           |
+| ----------- | ----------------------------------------------------- | ------- | ----------------------------------------------------- | ----------------- |
+| verbose     | Output action logs.                                   | --v     | boolean                                               | false             |
+| debug       | Output debug logs.                                    | --d     | boolean                                               | false             |
+| concurrency | Number of task that can be done in parallel.          | --c     | number                                                | 5                 |
+| remove      | Enable delete file from destination.                  | --rm    | boolean                                               | true              |
+| ignored     | A glob, regex, function, or array of any combination. | --i     | [filePattern](https://github.com/micromatch/anymatch) | null              |
+| ncUrl       | A netcat url for ssh. (this is your destination).     | --nc    | string                                                | null              |
+| username    | A username to connect for ssh.                        | --u     | string                                                | null              |
+| password    | A password to connect for ssh.                        | --pwd   | string                                                | null              |
+| privateKey  | Will look for your pka file under ~/.ssh.             | --ppk   | boolean                                               | false             |
+| events      | An array of event used as liteners.                   | --e     | array                                                 | [Events](#events) |
 
 ### Events
 

@@ -1,4 +1,4 @@
-const { createLocalServer } = require('../lib/server');
+const { createLocalServer } = require('../lib/servers');
 
 describe('server', () => {
   test('Should create a server', () => {

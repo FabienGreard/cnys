@@ -1,5 +1,5 @@
 const queue = require('../lib/queue'),
-  delay = require('../lib/helpers/delay');
+  delay = require('../helpers/delay');
 
 describe('queue', () => {
   let task = done =>

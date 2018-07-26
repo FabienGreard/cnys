@@ -1,9 +1,10 @@
-const watch = require('../lib/watch');
+const watch = require('../lib/watch'),
+  delay = require('../helpers/delay');
 
 describe('watch', () => {
   let watcher;
 
-  afterAll(() => {
+  afterEach(() => {
     watcher = null;
   });
 
@@ -22,9 +23,6 @@ describe('watch', () => {
   });
 
   describe('watchEvent', () => {
-    const delay = secondes =>
-      new Promise(resolve => setTimeout(resolve, secondes * 1000));
-
     const server = () => {
       this.event = null;
       return {
@@ -61,7 +59,6 @@ describe('watch', () => {
       const _server = server();
       watch.watchEvent(watcher, 'ready', _server);
 
-      expect.assertions(1);
       await expect(_server.getEventAsync()).resolves.toBe('ready');
     });
   });

@@ -1,30 +1,11 @@
-const { queueHandler, simpleHandler } = require('../lib/actionsHandler'),
-  createProxy = require('../lib/proxy');
+const handler = require('../lib/actionsHandler');
 
 describe('actionsHandler', () => {
-  const server = { ready: (...args) => {} };
+  const queue = {
+    push: (...args) => {}
+  };
 
-  test('Should create a simple handler', () => {
-    expect(simpleHandler).toHaveProperty('set');
-  });
-
-  test('Should create a queued handler', () => {
-    expect(queueHandler({})).toHaveProperty('set');
-  });
-
-  test('Shoud notify with a simple handler', () => {
-    const proxy = createProxy(server, simpleHandler);
-
-    try {
-      proxy.notify('ready', ['', '']);
-    } catch (e) {}
-  });
-
-  test('Shoud notify with a queued handler', () => {
-    const proxy = createProxy(server, queueHandler({}));
-
-    try {
-      proxy.notify('ready', ['', '']);
-    } catch (e) {}
+  test('Should create a handler', () => {
+    expect(handler(queue, {})).toHaveProperty('set');
   });
 });

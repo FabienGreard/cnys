@@ -1,4 +1,4 @@
-const { createRemoteServer } = require('../lib/server');
+const { createRemoteServer } = require('../lib/servers');
 
 describe('server', () => {
   test('Should create a server', () => {
