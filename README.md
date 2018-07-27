@@ -77,9 +77,16 @@ You can easily add your own config by editing `package.json`
 
 It also has a built-in coverage with `npm run coverage`
 
+## Planning
+
+- Better display
+- Better starting command help
+- Client test And Performance test
+
 ## Credits
 
 [chokidar](https://github.com/paulmillr/chokidar), a powerfull watcher
+
 [Jest](https://facebook.github.io/jest/), a testing framework
 
 Thanks to Alexandre for the idea.
