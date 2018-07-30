@@ -3,12 +3,15 @@ const handler = require('../lib/actionsHandler');
 describe('actionsHandler', () => {
   const queue = {
     push: (...args) => {
+      args[1]((...args) => {});
       expect(args[2]).toBe(1);
-      args[1]();
     }
   };
 
-  const obj = { ready: (...args) => new Promise(resolve => resolve()) };
+  const obj = {
+    ready: (...args) => new Promise(resolve => resolve()),
+    change: (...args) => new Promise(resolve => resolve())
+  };
 
   test('Should create a handler', () => {
     expect(handler(queue, {})).toHaveProperty('set');

@@ -1,23 +1,23 @@
-const client = require('../lib/client');
+const { createConnection, createFileFromLocal } = require('../lib/client');
 
 describe('client', () => {
-  test('Should create a basic connection', () => {
+  const connect = {
+    host: '',
+    username: '',
+    ncUrl: '',
+    password: '',
+    privateKey: ''
+  };
+
+  const config = { verbose: false, debug: false };
+
+  test('Should create a basic connection', async () => {
     //not yet implemented
+    //await createConnection(connect, co => {}, { config}
   });
 
-  test('Should create a netcat connection', () => {
+  test('Should create a netcat connection', async () => {
     //not yet implemented
-  });
-
-  test('Should create a directory', () => {
-    //not yet implemented
-  });
-
-  test('Should copy file from local to remote', () => {
-    //not yet implemented
-  });
-
-  test('Should read from a directory', () => {
-    //not yet implemented
+    //await createConnection(connect, co => {}, { config}
   });
 });

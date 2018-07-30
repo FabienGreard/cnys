@@ -86,12 +86,12 @@ describe('fs', () => {
   });
 
   describe('writeDir', () => {
-    test('Should delete a dir without error', async () => {
+    test('Should write a dir without error', async () => {
       const dir = fs.writeDir('./fs-test');
       await expect(dir).resolves.toEqual('./fs-test');
     });
 
-    test('Should delete a dir with error', async () => {
+    test('Should write a dir with error', async () => {
       const dir = fs.writeDir('./not-match/not-match', true);
       await expect(dir).resolves.toThrow();
     });

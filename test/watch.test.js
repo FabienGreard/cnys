@@ -11,13 +11,11 @@ describe('watch', () => {
   describe('createWatcher', () => {
     test('Should create a watcher', () => {
       watcher = watch.createWatcher({});
-
       expect(watcher).toHaveProperty('_events');
     });
 
     test('Should create a watcher with options', () => {
       watcher = watch.createWatcher({ ignored: ['*.md'], url: 'test' });
-
       expect(watcher).toHaveProperty('_events');
     });
   });
@@ -32,7 +30,7 @@ describe('watch', () => {
         getEvent: () => this.event,
         getEventAsync: () => {
           return new Promise(async resolve => {
-            await delay(0.1);
+            await delay(0.2);
             resolve(this.event);
           });
         }
@@ -42,7 +40,6 @@ describe('watch', () => {
     test('Should attach an event', () => {
       watcher = watch.createWatcher({});
       watch.watchEvent(watcher, 'ready', server());
-
       expect(watcher._events).toHaveProperty('ready');
     });
 
@@ -50,7 +47,6 @@ describe('watch', () => {
       watcher = watch.createWatcher({});
       const _server = server();
       watch.watchEvent(watcher, 'ready', _server, true);
-
       expect(_server.getEvent()).toBe('ready');
     });
 
@@ -58,7 +54,6 @@ describe('watch', () => {
       watcher = watch.createWatcher({ source: '../lib' });
       const _server = server();
       watch.watchEvent(watcher, 'ready', _server);
-
       await expect(_server.getEventAsync()).resolves.toBe('ready');
     });
   });

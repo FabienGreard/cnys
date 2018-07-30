@@ -3,19 +3,22 @@ const { loadingBar, verbose, debug } = require('../lib/display');
 describe('display', () => {
   describe('debug', () => {
     test('Should display a debug', () => {
-      //not implemented
+      expect(debug(true, 'debug')).toBe('debug');
     });
   });
 
   describe('verbose', () => {
     test('Should display a verbose', () => {
-      //not implemented
+      expect(verbose(true, 'verbose')).toBe('verbose');
     });
   });
 
   describe('loadingBar', () => {
     test('Should create a loadingBar', () => {
-      //not implemented
+      const _loadingBar = loadingBar();
+      expect(_loadingBar).toHaveProperty('addTask');
+      expect(_loadingBar).toHaveProperty('taskDone');
+      expect(_loadingBar).toHaveProperty('showBar');
     });
 
     test('Should add a task', () => {
@@ -26,7 +29,7 @@ describe('display', () => {
       //not implemented
     });
 
-    test('Should show a task', () => {
+    test('Should display a loading bar', () => {
       //not implemented
     });
   });

@@ -1,8 +1,13 @@
 const { createLocalServer } = require('../lib/servers');
 
 describe('server', () => {
+  let server;
+
+  afterEach(() => {
+    server = null;
+  });
   test('Should create a server', () => {
-    const server = createLocalServer('url');
+    server = createLocalServer('url');
     expect(server).toHaveProperty('add');
     expect(server).toHaveProperty('addDir');
     expect(server).toHaveProperty('change');
