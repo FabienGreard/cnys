@@ -59,9 +59,5 @@ exports.handler = function(argv) {
     throw new Error('destination argumment is missing or invalid');
   }
 
-  if (argv.verbose)
-    console.log(
-      `Start watching ${argv.source} on ${argv.url} at ${argv.destination}`
-    );
   return argv;
 };
