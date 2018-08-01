@@ -1,14 +1,17 @@
 const readline = require('readline');
 
 module.exports = () => {
-  if (process.env.NODE_ENV === 'test') return;
-  this.rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
+  this.rl =
+    process.env.NODE_ENV === 'test'
+      ? ''
+      : readline.createInterface({
+          input: process.stdin,
+          output: process.stdout
+        });
   this.firstScreen = 5;
   return {
     write: (message, pos) => {
+      if (process.env.NODE_ENV === 'test') return;
       const _pos =
         pos === 'loading'
           ? { x: 0, y: 0 }

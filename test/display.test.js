@@ -22,15 +22,18 @@ describe('display', () => {
     });
 
     test('Should add a task', () => {
-      //not implemented
+      const _loadingBar = loadingBar();
+      _loadingBar.addTask('task');
     });
 
     test('Should end a task', () => {
-      //not implemented
+      const _loadingBar = loadingBar();
+      _loadingBar.taskDone();
     });
 
     test('Should display a loading bar', () => {
-      //not implemented
+      const _loadingBar = loadingBar();
+      _loadingBar.showBar();
     });
   });
 });
