@@ -18,6 +18,28 @@ If something doesn’t work, please [file an issue](https://github.com/FabienGre
 $ npm install or yarn install
 ```
 
+Then use it like this :
+
+```javascript
+const cnys = require('cnys');
+
+const config = {
+  url: '192.168.30.2',
+  source: 'sync',
+  destination: '/home/user/sync',
+  username: 'your_username',
+  privateKey: true
+};
+
+cnys(config);
+```
+
+Which is the same as :
+
+```sh
+$ cnys remote 'sync' '192.168.30.2' '/home/user/sync'  --username 'your_username' --privateKey true
+```
+
 ### Commands
 
 Start cnys on a local folder to a local destination :
@@ -64,7 +86,7 @@ $ cnys local 'sync' 'sync2' --v true --ignored '.git*' '*.yml'
 The example above will start watching file on a folder name sync and copying file into folder sync2
 
 ```sh
-$ cnys remote 'sync' '192.168.30.2' '/home/user/sync'  --ncUrl '192.168.30.3' --username 'fgreard' --privateKey true
+$ cnys remote 'sync' '192.168.30.2' '/home/user/sync'  --ncUrl '192.168.30.3' --username 'your_username' --privateKey true
 ```
 
 The example above will start watching file on a folder name sync and copying file to '192.168.30.3' at '/home/user/test'
@@ -76,12 +98,6 @@ Use `npm test` to start testing your file. By default it read test file named `*
 You can easily add your own config by editing `package.json`
 
 It also has a built-in coverage with `npm run coverage`
-
-## Planning
-
-- Better display
-- Better starting command help
-- Client test And Performance test
 
 ## Credits
 
