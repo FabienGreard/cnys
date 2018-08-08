@@ -104,6 +104,7 @@ module.exports = () => {
 
       readline.cursorTo(this.rl, _pos.x, _pos.y);
       this.rl.write(message);
+      readline.moveCursor(this.rl, -999999, 0);
     }
   };
 };
