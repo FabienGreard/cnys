@@ -42,6 +42,12 @@ $ cnys remote 'sync' '192.168.30.2' '/home/user/sync'  --username 'your_username
 
 ### Commands
 
+Start cnys step by step guide with :
+
+```sh
+$ cnys init
+```
+
 Start cnys on a local folder to a local destination :
 
 ```sh
