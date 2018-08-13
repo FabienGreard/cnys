@@ -1,5 +1,5 @@
 module.exports = {
-  source: null,
+  source: '.',
   url: null,
   ncUrl: null,
   username: null,
