@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+process.stdout.write('\033c\033[3J');
 
 const { launchServer, launchWatcher } = require('./lib'),
   { debug } = require('./lib/display'),
