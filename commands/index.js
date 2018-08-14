@@ -5,6 +5,7 @@ module.exports = (config, callback) => {
     yargs
       .config(config)
       .commandDir('cmds')
+      .demandCommand(2, 'Missing arguments.')
       .help().argv
   );
 };
