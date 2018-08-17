@@ -1,4 +1,4 @@
-module.exports = (string, number) => {
+const formatPath = (string, number) => {
   const _number = number - string.length;
   let _string = string;
 
@@ -23,3 +23,9 @@ module.exports = (string, number) => {
 
   return _string;
 };
+
+const formatLog = (string, number) => {
+  return string.slice(0, number);
+};
+
+module.exports = { formatPath, formatLog };

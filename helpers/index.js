@@ -1,5 +1,5 @@
 const readline = require('./readline'),
-  format = require('./format'),
+  { formatPath, formatLog } = require('./format'),
   delay = require('./delay');
 
-module.exports = { delay, format, readline };
+module.exports = { delay, formatLog, formatPath, readline };
