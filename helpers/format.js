@@ -25,7 +25,7 @@ const formatPath = (string, number) => {
 };
 
 const formatLog = (string, number) => {
-  return string.slice(0, number);
+  return String(string).slice(0, number);
 };
 
 module.exports = { formatPath, formatLog };
