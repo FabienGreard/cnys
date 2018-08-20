@@ -7,7 +7,6 @@ const { launchServer, launchWatcher } = require('./lib'),
   config = require('./config');
 
 launchCommand(config, config => {
-  //config = config.stepByStep ? await stepByStepCmd(config) : config;
   debug(config.debug, config);
   const server = launchServer(config);
   launchWatcher(server, config);
