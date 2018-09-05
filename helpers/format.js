@@ -1,6 +1,9 @@
 const format = (string, number) => {
   const isShort = number - string.length >= 0;
 
+  // force conversion
+  string = String(string);
+
   if (isShort) {
     string = string + ' '.repeat(number - string.length);
   } else {
@@ -16,10 +19,14 @@ const format = (string, number) => {
         .join('/');
     } catch (e) {}
 
+    string;
+
     string =
       number - string.length >= 0
         ? string + ' '.repeat(number - string.length)
         : string.slice(0, number);
+
+    string;
   }
 
   return string;
