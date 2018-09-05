@@ -1,27 +1,22 @@
 const formatPath = (string, number) => {
-  const _number = number - string.length;
-  let _string = string;
+  const isShort = number - string.length >= 0;
 
-  if (_number >= 0) {
-    _string = _string.split('');
-    _string.splice(string.length, 0, ' '.repeat(_number));
-    _string = _string.join('');
+  if (isShort) {
+    string = string + ' '.repeat(number - string.length);
   } else {
-    try {
-      _string = _string.split('/');
+    string = string
+      .split('/')
+      .reduce((ac, cv, i) => {
+        return [...ac, i > 1 && i < string.split('/').length - 2 ? '...' : cv];
+      }, [])
+      .join('/');
 
-      for (let i = 3, length = 0; i < _string.length; i++) {
-        length += _string[i].length;
-        if (length + _number >= 0) {
-          _string.splice(3, i, '...');
-          _string = _string.join('/');
-          break;
-        }
-      }
-    } catch (e) {}
+    string;
+
+    string = string.slice(0, number);
   }
 
-  return _string;
+  return string;
 };
 
 const formatLog = (string, number) => {
