@@ -1,5 +1,7 @@
 # cnys [![Build Status](https://travis-ci.org/FabienGreard/cnys.svg?branch=master)](https://travis-ci.org/FabienGreard/cnys)[![dependencies Status](https://david-dm.org/FabienGreard/cnys/status.svg)](https://david-dm.org/FabienGreard/cnys)[![devDependencies Status](https://david-dm.org/FabienGreard/cnys/dev-status.svg)](https://david-dm.org/FabienGreard/cnys?type=dev)
 
+![](https://media.giphy.com/media/3o7ZeLr01g0kAk4K6Q/giphy.gif)
+
 cnys main feature allow developers to synchronize files between remote server on change !, **what it does**:
 
 - ssh/sftp ! :globe_with_meridians:
